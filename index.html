@@ -3,203 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
     <link rel="shortcut icon" href="2 1.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
-
     <title>One Year Anniversary</title>
+    <script>
+        function countdownAndRedirect() {
+            let countdown = 3;
+            const countdownElement = document.getElementById('countdown');
 
-<style>
-
-body {
-                margin: 0;
-                padding: 0;
-                background-image: url(moon.jpg);
-                background-repeat: no-repeat;
-                background-position: center;
-                background-color: black;
-    }
-            /*adding background to section
-          and animation named color-change*/
-            section {
-               
-                height: 100vh;
-                animation: rain 0.6s linear infinite;
-                background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20200828184719/rain-300x300.png);
-            }
-            /*adding rain img and making opacity 0*/
-            section:before {
-                content: "";
-                position: absolute;
-               
-                width: 100%;
-                height: 100%;
-               
-                animation: lighting 3s linear infinite;
-                background: #fff;
-                opacity: 0;
-            }
-            /* just changing the position of image 
-          of rain using keyframes*/
-            @keyframes rain {
-                0% {
-                    background-position: 0 0;
-                    opacity: 1;
+            const interval = setInterval(() => {
+                countdownElement.textContent = countdown;
+                if (countdown === 0) {
+                    clearInterval(interval);
+                    window.location.href = 'index.html';
                 }
- 
-                100% {
-                    background-position: 8% 80%;
-                    opacity: 1;
-                }
-            }
- 
-
-@keyframes lighting {
-
-0% {
-
-    opacity: 0;
-}
-
-10% {
-
-    opacity: 0;
-}
-
-11% {
-
-opacity: 0;
-}
-
-14% {
-
-opacity: 0;
-}
-
-20% {
-
-opacity: 0;
-}
-
-21% {
-
-opacity: 1;
-}
-
-24% {
-
-opacity: 0;
-}
-
-104% {
-
-opacity: 0;
-}
-
-}
-
-.img-translate {
-
-animation: img 15s  ease;
-transition: all .3s;
-}
-
-
-@keyframes img {
-
-0% 
-{
-
-transform: translateY(-500px);
-
-}
-
-50% 
-{
-
-transform: translateY(0px);
-
-
-}
-
-
-}
-
-.baloon-translate {
-
-animation: baloon 15s  ease;
-transition: all .3s;
-}
-
-
-@keyframes baloon {
-
-0% 
-{
-
-transform: translateY(-500px);
-
-}
-
-50% 
-{
-
-transform: translateY(-30px);
-
-
-}
-
-100% 
-{
-
-transform: translateY(0px);
-
-
-}
-
-
-
-
-}
-
-</style>
-
+                countdown--;
+            }, 1000);
+        }
+    </script>
 </head>
-
-<body>
-    <section id="rain" class="relative hidden">
-        
-        <div id="img" class="img-translate hidden  flex flex-col gap-10 justify-center items-center">
-            <img class="h-[150px] w-[160px] md:h-[180px] md:w-[190px]  mx-auto" src="couple.png" alt="">
-            <img class="h-[100px] w-[100px] mx-auto" src="output-onlinegiftools.gif" alt="">
-            
-            
-            
-           
-        </div>
-
-
-         
-
-</section>
-
-<audio class="loop-audio hidden" loop>
-    <source src="বৃষ্টি_ভেজা_রাতে_আমি_তোমার_নিয়ে_যাবো💫💞___-Bristi_Veja_Rate_Ami_Tomay_Niye_Jabo💝____Black_Screen(128k).m4a" type="audio/mpeg">
-    
-  </audio>
-
-  <div id="vanish" class="flex items-center justify-center">
-  
-
-
-    <button id="changeColorButton" class="play-button startConfetti bg-black text-white font-bold h-screen w-screen rounded">
-        Touch Anywhere
-      </button>
-    
-    </div>
-
-
-<script src="script.js"></script>
+<body onload="countdownAndRedirect()" class="bg-gradient-to-bl from-green-400 via-yellow-500 to-red-500">
+    <h1 class="flex justify-center items-center min-h-[100vh] text-[300px] font-extrabold"> <span id="countdown">3</span></h1>
 </body>
 </html>
